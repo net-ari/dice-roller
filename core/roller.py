@@ -16,12 +16,21 @@ class Roller:
             die (Die): Die to be added.
         """
         self._dice_list.append(die)
+
+    def remove(self,die: Die) -> None:
+        """Removes a die from the internal list of dice. Does nothing if not found.
+
+        Args:
+            die (Die): Die to be removed.
+        """
+        if die in self._dice_list:
+            self._dice_list.remove(die)
     
     def rollAll(self) -> list[tuple[str,int]]:
         """Rolls all dice in the internal list of dice, returning a list of results.
 
         Returns:
-            list[int]: List of dice roll results in order of dice rolled.
+            list[tuple[str,int]]: List of dice roll results in order of dice rolled.
         """
         results: list[tuple[str,int]] = []
 

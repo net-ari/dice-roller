@@ -1,7 +1,7 @@
 from die import Die
 
 class Roller:
-    """Maintains a list of dice which it can roll at once or add to.
+    """Maintains a list of dice which it can roll at once or add to/remove from.
 
     Attributes:
         dice_list (list[Die]): List of current dice. Begins empty.

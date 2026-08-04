@@ -1,7 +1,7 @@
 from core import Die, Roller
 import sys
 from PySide6.QtCore import QSize, Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QLabel
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -9,13 +9,16 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Dice Roller")
 
         self.button = QPushButton("Press Me!")
-        self.button.clicked.connect(self.the_button_was_clicked)
-
-        self.setCentralWidget(self.button)
-
-    def the_button_was_clicked(self):
-        print("Clicked!")
-        self.button.setEnabled(False)
+        self.label = QLabel("test")
+        #self.setCentralWidget(self.button)
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.button)
+        
+    
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
 
 app = QApplication([])
 

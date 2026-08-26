@@ -38,3 +38,11 @@ class Roller:
             results.append((die.get_name(),die.roll()))
         
         return results
+
+    def getAll(self) -> list[Die]:
+        """Returns a list of the Die objects the Roller contains.
+
+        Returns:
+            list[Die]: List of Die objects.
+        """
+        return self._dice_list

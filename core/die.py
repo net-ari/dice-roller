@@ -25,6 +25,6 @@ class Die:
         """Returns the name of the Die.
 
         Returns:
-            str: _description_
+            str: Name of Die.
         """
         return self.name

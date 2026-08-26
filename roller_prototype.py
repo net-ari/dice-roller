@@ -7,6 +7,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Roller Prototype")
         self.roller = Roller()
+        self.setFixedSize(640,360)
 
         widget = QWidget()
         main_layout = QGridLayout()
@@ -53,7 +54,10 @@ class MainWindow(QMainWindow):
 
         main_layout.setColumnStretch(0,0)
         main_layout.setColumnStretch(1,3)
-        main_layout.setColumnStretch(4,1)
+        main_layout.setColumnStretch(4,1)  
+
+        # widget.setContentsMargins(0,0,0,0)
+        # main_layout.setContentsMargins(0,0,0,0)
 
         widget.setLayout(main_layout)
         self.setCentralWidget(widget)
